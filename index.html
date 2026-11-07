@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도심 속 힐링 사색 산책 플래너</title>
+  <meta name="description" content="바쁜 일상 속, 동네 산책로와 아늑한 공간을 연결하여 몸과 마음의 안정을 찾는 도심 속 힐링 사색 프로그램" />
+  <meta property="og:title" content="도심 속 힐링 사색 산책 플래너" />
+  <meta property="og:description" content="바쁜 일상 속, 동네 산책로와 아늑한 공간을 연결하여 몸과 마음의 안정을 찾는 도심 속 힐링 사색 프로그램" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts & Pretendard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+KR:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baseBg: '#F9F8F6',
+            accentGreen: '#2D5A27',
+            accentGreenHover: '#23481F',
+            accentGreenSoft: '#EBF2EA',
+            secondaryBrown: '#8C7A6B',
+            secondaryBrownDark: '#5E5044',
+            cardBg: '#FFFFFF',
+            textColor: '#2C2C2C'
+          },
+          fontFamily: {
+            sans: ['Pretendard', 'Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Noto Serif KR', 'Georgia', 'serif'],
+            serifTitle: ['Noto Serif KR', 'Cormorant Garamond', 'Georgia', 'serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Pretendard', 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: #F9F8F6;
+      color: #2C2C2C;
+      overflow-x: hidden;
+    }
+    .font-serif-title {
+      font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+    }
+    .font-display-en {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F9F8F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D3C9BD;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8C7A6B;
+    }
+  </style>
+</head>
+<body class="bg-baseBg text-textColor antialiased selection:bg-accentGreen selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- Top Navigation (Sticky 3-Zone Contract) -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-40 bg-baseBg/90 backdrop-blur-md border-b border-secondaryBrown/15 transition-all">
+    <div class="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between gap-8">
+      <!-- Zone 1: Brand Wordmark -->
+      <a href="#" class="flex items-center gap-2 text-lg md:text-xl font-bold tracking-tight text-accentGreen font-serif-title whitespace-nowrap shrink-0 hover:opacity-90 transition">
+        <span class="w-8 h-8 rounded-full bg-accentGreen/10 flex items-center justify-center text-base">🌿</span>
+        <span>사색 산책 플래너</span>
+      </a>
+
+      <!-- Zone 2: Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-secondaryBrown">
+        <a href="#문제-정의" class="hover:text-accentGreen transition-colors whitespace-nowrap py-1">일상의 고민</a>
+        <a href="#솔루션-제시" class="hover:text-accentGreen transition-colors whitespace-nowrap py-1">솔루션</a>
+        <a href="#핵심-기능혜택" class="hover:text-accentGreen transition-colors whitespace-nowrap py-1">핵심 혜택</a>
+        <a href="#추천-코스" class="hover:text-accentGreen transition-colors whitespace-nowrap py-1">추천 코스</a>
+        <a href="#신뢰-구축" class="hover:text-accentGreen transition-colors whitespace-nowrap py-1">신뢰 인프라</a>
+        <a href="#가격-및-조건" class="hover:text-accentGreen transition-colors whitespace-nowrap py-1">베타 혜택</a>
+      </nav>
+
+      <!-- Zone 3: Primary Action -->
+      <div class="flex items-center gap-3 shrink-0">
+        <button onclick="openApplyModal()" class="hidden sm:inline-flex items-center gap-1.5 bg-accentGreen hover:bg-accentGreenHover text-white text-xs md:text-sm font-semibold py-2.5 px-5 rounded-full shadow-sm hover:shadow transition transform hover:-translate-y-0.5 whitespace-nowrap cursor-pointer">
+          <span>베타 세션 신청</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-textColor hover:bg-black/5" aria-label="메뉴 열기">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-secondaryBrown/20 bg-baseBg px-6 py-5 space-y-4 shadow-lg">
+      <nav class="flex flex-col space-y-3 text-sm font-medium text-textColor">
+        <a href="#문제-정의" onclick="toggleMobileMenu()" class="py-1 text-secondaryBrownDark hover:text-accentGreen">일상의 고민</a>
+        <a href="#솔루션-제시" onclick="toggleMobileMenu()" class="py-1 text-secondaryBrownDark hover:text-accentGreen">솔루션</a>
+        <a href="#핵심-기능혜택" onclick="toggleMobileMenu()" class="py-1 text-secondaryBrownDark hover:text-accentGreen">핵심 혜택</a>
+        <a href="#추천-코스" onclick="toggleMobileMenu()" class="py-1 text-secondaryBrownDark hover:text-accentGreen">추천 코스</a>
+        <a href="#신뢰-구축" onclick="toggleMobileMenu()" class="py-1 text-secondaryBrownDark hover:text-accentGreen">신뢰 인프라</a>
+        <a href="#가격-및-조건" onclick="toggleMobileMenu()" class="py-1 text-secondaryBrownDark hover:text-accentGreen">베타 혜택</a>
+      </nav>
+      <div class="pt-2">
+        <button onclick="toggleMobileMenu(); openApplyModal();" class="w-full bg-accentGreen text-white py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2">
+          <span>사색 산책 프로그램 참여 신청</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================= -->
+    <!-- 1. 헤드라인 (Hero Section - Verdora 스타일 비대칭 쇼케이스) -->
+    <!-- ========================================================================= -->
+    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 px-6 overflow-hidden">
+      <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-accentGreenSoft/60 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <!-- Left Column -->
+          <div class="lg:col-span-7 space-y-6 text-left">
+            <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-accentGreen/10 text-accentGreen text-xs md:text-sm font-semibold tracking-wide">
+              <span>✨</span>
+              <span>로컬 힐링 커뮤니티 프로그램</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.25] text-textColor font-serif-title">
+              동네 산책로와 아늑한 공간을 연결하여<br class="hidden sm:inline" />
+              <span class="text-accentGreen">몸과 마음의 안정</span>을 찾는 힐링 사색 프로그램
+            </h1>
+
+            <p class="text-base sm:text-lg md:text-xl text-secondaryBrownDark leading-relaxed max-w-2xl font-normal">
+              가장 가까운 동네 골목과 나무 그늘을 걸으며 지친 일상에 싱그러운 쉼표를 더해보세요.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#가격-및-조건" class="inline-flex items-center gap-2 bg-accentGreen hover:bg-accentGreenHover text-white font-bold py-3.5 px-7 md:py-4 md:px-8 rounded-full shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 text-sm md:text-base cursor-pointer">
+                <span>사색 프로그램 참여 안내 보기</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+
+              <button onclick="openJournalModal()" class="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 text-accentGreen border border-accentGreen/30 font-semibold py-3.5 px-6 rounded-full shadow-sm hover:shadow transition text-sm md:text-base cursor-pointer">
+                <span>📖</span>
+                <span>디지털 사색 일지 샘플</span>
+              </button>
+            </div>
+
+            <div class="pt-4 flex flex-wrap items-center gap-6 text-xs md:text-sm font-medium text-secondaryBrownDark">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-accentGreen/10 flex items-center justify-center text-xs">🌿</span>
+                <span>맞춤형 숲길 코스</span>
+              </div>
+              <span class="text-secondaryBrown/40 hidden sm:inline">·</span>
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-accentGreen/10 flex items-center justify-center text-xs">☕</span>
+                <span>로컬 독립서점 연계</span>
+              </div>
+              <span class="text-secondaryBrown/40 hidden sm:inline">·</span>
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-accentGreen/10 flex items-center justify-center text-xs">📖</span>
+                <span>디지털 사색 일지 증정</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Asymmetric Visual Card & Circular Stamp -->
+          <div class="lg:col-span-5 relative flex justify-center">
+            <div class="relative w-full max-w-md lg:max-w-none">
+              <div class="relative rounded-[2.5rem] overflow-hidden border-4 border-white shadow-2xl bg-white aspect-[4/5] sm:aspect-[4/4.8]">
+                <img src="/assets/images/hero_healing_walk_1794011260208.jpg" alt="도심 속 힐링 사색 산책로" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10"></div>
+
+                <!-- Floating Bottom Card -->
+                <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/80 shadow-lg text-left">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-accentGreen bg-accentGreen/10 px-2 py-0.5 rounded-full">
+                      오늘의 사색 큐레이션
+                    </span>
+                    <span class="text-xs text-secondaryBrown flex items-center gap-1 font-medium">
+                      🧭 45분 소요
+                    </span>
+                  </div>
+                  <p class="text-sm font-bold text-textColor font-serif-title">
+                    초록빛 숲길 & 고요한 책방 코스
+                  </p>
+                  <p class="text-xs text-secondaryBrownDark mt-0.5">
+                    나무 그늘 아래서 마음의 짐을 내려놓고 호흡을 고릅니다.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Verdora-style Circular Badge Stamp -->
+              <div class="absolute -top-5 -right-3 md:-top-7 md:-right-5 w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#8C6239] text-baseBg p-2 flex items-center justify-center shadow-xl border-2 border-white/90 transform hover:rotate-12 transition-transform duration-300">
+                <div class="w-full h-full rounded-full border border-dashed border-baseBg/60 flex flex-col items-center justify-center text-center p-1">
+                  <span class="text-[9px] md:text-[10px] tracking-wider uppercase font-semibold text-baseBg/90">
+                    Mindful Walk
+                  </span>
+                  <span class="text-sm md:text-base my-0.5">🍃</span>
+                  <span class="text-[9px] md:text-[10px] font-bold text-baseBg">
+                    사색과 치유
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4-Item KPI & Trust Strip (Verdora & GreenNest Style) -->
+    <!-- ========================================================================= -->
+    <section class="px-6 -mt-4 mb-16 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-cardBg rounded-3xl shadow-md border border-secondaryBrown/15 p-6 md:p-8 transition-shadow hover:shadow-lg">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-secondaryBrown/10">
+            <!-- 1. 로컬 코스 -->
+            <div class="flex flex-col items-center text-center">
+              <div class="w-12 h-12 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center mb-4 text-xl">
+                📍
+              </div>
+              <h3 class="text-base md:text-lg font-bold text-textColor mb-1 font-serif-title">
+                로컬 코스
+              </h3>
+              <p class="text-xs md:text-sm text-secondaryBrown leading-relaxed max-w-[240px]">
+                큐레이터가 직접 걷고 검증한 조용한 도심 힐링 오솔길
+              </p>
+            </div>
+
+            <!-- 2. 지역 서점·도서관 연계 -->
+            <div class="flex flex-col items-center text-center pt-6 md:pt-0 md:pl-6">
+              <div class="w-12 h-12 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center mb-4 text-xl">
+                📚
+              </div>
+              <h3 class="text-base md:text-lg font-bold text-textColor mb-1 font-serif-title">
+                지역 서점·도서관 연계
+              </h3>
+              <p class="text-xs md:text-sm text-secondaryBrown leading-relaxed max-w-[240px]">
+                지역 독립서점 및 공공도서관과 함께 만드는 신뢰 공간
+              </p>
+            </div>
+
+            <!-- 3. 맞춤 사색 일지 -->
+            <div class="flex flex-col items-center text-center pt-6 md:pt-0 md:pl-6">
+              <div class="w-12 h-12 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center mb-4 text-xl">
+                🛡️
+              </div>
+              <h3 class="text-base md:text-lg font-bold text-textColor mb-1 font-serif-title">
+                맞춤 사색 일지
+              </h3>
+              <p class="text-xs md:text-sm text-secondaryBrown leading-relaxed max-w-[240px]">
+                나만의 속도로 일상 속 쉼을 이어가는 디지털 e-book 가이드
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 2. 문제 정의 (Problem Identification) & 인터랙티브 자가 진단 -->
+    <!-- ========================================================================= -->
+    <section id="문제-정의" class="py-20 md:py-28 px-6 bg-white/70 border-y border-secondaryBrown/15 relative">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-xs uppercase tracking-widest font-bold text-secondaryBrown block mb-3">
+          Problem Identification
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-textColor mb-4 font-serif-title">
+          지친 일상, 혹시 이런 고민이 있으신가요?
+        </h2>
+        <p class="text-secondaryBrownDark text-sm md:text-base max-w-2xl mx-auto mb-14">
+          쉼표 없는 일상과 과도한 정보의 홍수 속에서, 우리는 언제 마지막으로 나의 내면에 귀 기울여 보았을까요?
+        </p>
+
+        <!-- 2 Problem Cards from the Report -->
+        <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
+          <!-- Card 1 -->
+          <div class="bg-baseBg p-8 md:p-9 rounded-3xl border border-secondaryBrown/15 shadow-sm hover:shadow-md transition duration-300 relative overflow-hidden group">
+            <div class="w-14 h-14 rounded-2xl bg-[#D87D4A]/10 text-[#D87D4A] flex items-center justify-center text-2xl mb-6 group-hover:scale-105 transition-transform">
+              🌪️
+            </div>
+            <div class="inline-block text-xs font-semibold text-[#D87D4A] bg-[#D87D4A]/10 px-2.5 py-1 rounded-full mb-3">
+              정서적 고갈
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-textColor font-serif-title">
+              번아웃과 스트레스
+            </h3>
+            <p class="text-secondaryBrownDark leading-relaxed text-sm md:text-base">
+              바쁜 일상에 치여 마음을 편히 돌보고 쉬어갈 수 있는 로컬 힐링 인프라 및 프로그램이 턱없이 부족합니다.
+              스마트폰을 손에서 놓지 못해 뇌는 늘 과열되어 있고, 진정한 회복의 감각을 잊어가고 있습니다.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-baseBg p-8 md:p-9 rounded-3xl border border-secondaryBrown/15 shadow-sm hover:shadow-md transition duration-300 relative overflow-hidden group">
+            <div class="w-14 h-14 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center text-2xl mb-6 group-hover:scale-105 transition-transform">
+              🗺️
+            </div>
+            <div class="inline-block text-xs font-semibold text-accentGreen bg-accentGreen/10 px-2.5 py-1 rounded-full mb-3">
+              경로 탐색의 한계
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-textColor font-serif-title">
+              코스 발굴의 어려움
+            </h3>
+            <p class="text-secondaryBrownDark leading-relaxed text-sm md:text-base">
+              혼자서 사색을 시작하려고 해도 어디로 가야 할지, 어떤 코스가 좋은지 알기 어려워 엄두가 나지 않습니다.
+              자동차 매연과 인파를 피해 조용히 걸을 수 있는 동네의 숨은 보석 같은 길을 찾기가 쉽지 않습니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Self-Assessment Box -->
+        <div class="bg-white rounded-3xl p-6 md:p-8 border border-accentGreen/20 shadow-sm text-left max-w-3xl mx-auto">
+          <div class="flex items-center gap-2 mb-4 text-accentGreen">
+            <span class="text-xl">🌬️</span>
+            <h4 class="font-bold text-base md:text-lg font-serif-title text-textColor">
+              지금 내 마음에 쉼표가 필요한지 체크해보세요
+            </h4>
+          </div>
+          <p class="text-xs md:text-sm text-secondaryBrown mb-5">
+            해당하는 항목을 클릭하면 사색 산책 플래너가 제안하는 솔루션을 확인하실 수 있습니다.
+          </p>
+
+          <div class="space-y-3 mb-6" id="checklistContainer">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="bg-baseBg p-4 rounded-2xl flex items-center justify-between flex-wrap gap-3 border border-secondaryBrown/15">
+            <div class="text-xs md:text-sm text-secondaryBrownDark" id="checkSummary">
+              선택된 상태: <strong class="text-accentGreen font-bold" id="checkedCount">1개</strong> 해당됨
+            </div>
+            <a href="#솔루션-제시" class="text-xs md:text-sm font-bold text-accentGreen hover:underline flex items-center gap-1">
+              <span>솔루션 확인하기</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3. 솔루션 제시 (Solution & Value Proposition) -->
+    <!-- ========================================================================= -->
+    <section id="솔루션-제시" class="py-20 md:py-28 px-6 max-w-6xl mx-auto">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <span class="text-xs uppercase tracking-widest font-bold text-accentGreen block mb-3">
+          Unique Value Proposition
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-textColor mb-4 font-serif-title">
+          로컬 자원과 소통을 결합한 유일한 솔루션
+        </h2>
+        <p class="text-secondaryBrown text-sm md:text-base leading-relaxed">
+          동네의 숨은 자원과 따뜻한 커뮤니티 감성을 연결합니다.
+          멀리 떠나지 않아도 괜찮습니다. 우리 동네의 아름다운 오솔길과 공간이 최고의 힐링 거점이 됩니다.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-10">
+        <!-- Solution 1 -->
+        <div class="bg-white rounded-3xl border border-secondaryBrown/15 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition duration-300">
+          <div class="p-8 md:p-10 space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center font-bold text-xl">
+                🧭
+              </div>
+              <span class="text-xs font-bold text-accentGreen bg-accentGreen/10 px-3 py-1 rounded-full">
+                공간적 혁신
+              </span>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-textColor font-serif-title">
+              물적·공간 자원 연계
+            </h3>
+
+            <p class="text-secondaryBrownDark leading-relaxed text-sm md:text-base">
+              평범한 동네 산책로와 지역 거점 공간(독립서점 등)을 유기적으로 결합하여 안전하고 아늑한 사색 환경을 제공합니다.
+            </p>
+
+            <ul class="space-y-2.5 pt-2 text-xs md:text-sm text-secondaryBrown">
+              <li class="flex items-start gap-2.5">
+                <span class="text-accentGreen font-bold">✓</span>
+                <span>동네 공원 산책로와 골목 독립서점을 잇는 최적의 도보 동선 설계</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-accentGreen font-bold">✓</span>
+                <span>외부의 날씨에 구애받지 않는 안전하고 따뜻한 실내 사색 쉼터 확보</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-accentGreen font-bold">✓</span>
+                <span>지역 골목 상권 및 소상공인과의 지속 가능한 상생 모델</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="px-8 pb-8">
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] relative shadow-inner bg-baseBg">
+              <img src="/assets/images/bookstore_healing_space_1794011261258.jpg" alt="독립서점 연계 공간" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-4">
+                <span class="text-white text-xs font-medium">거점 공간 예시: 아늑한 동네 독립서점 & 티 살롱</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solution 2 -->
+        <div class="bg-white rounded-3xl border border-secondaryBrown/15 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition duration-300">
+          <div class="p-8 md:p-10 space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-[#8C6239]/10 text-[#8C6239] flex items-center justify-center font-bold text-xl">
+                🤝
+              </div>
+              <span class="text-xs font-bold text-[#8C6239] bg-[#8C6239]/10 px-3 py-1 rounded-full">
+                정서적 공감
+              </span>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-textColor font-serif-title">
+              경험 기반 진솔한 소통
+            </h3>
+
+            <p class="text-secondaryBrownDark leading-relaxed text-sm md:text-base">
+              개인 블로그 운영 경험을 바탕으로 지역 주민들과 깊이 있게 소통하며 나만의 속도에 맞는 힐링 코스를 안내합니다.
+            </p>
+
+            <ul class="space-y-2.5 pt-2 text-xs md:text-sm text-secondaryBrown">
+              <li class="flex items-start gap-2.5">
+                <span class="text-accentGreen font-bold">✓</span>
+                <span>수백 편의 산책 기록과 사색 에세이를 축적한 큐레이터의 진정성 있는 큐레이션</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-accentGreen font-bold">✓</span>
+                <span>무리한 대화나 친목을 강요하지 않는, 편안하고 무해한 침묵의 연대</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-accentGreen font-bold">✓</span>
+                <span>참가자의 걸음 속도와 그날의 감정에 맞춘 1:1 맞춤 피드백 제공</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="px-8 pb-8">
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] relative shadow-inner bg-baseBg">
+              <img src="/assets/images/stream_park_course_1794011261561.jpg" alt="자연 하천 산책로" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-4">
+                <span class="text-white text-xs font-medium">실제 코스 풍경: 도심 속 생태 하천과 버드나무 흙길</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. 핵심 기능/혜택 (Key Features/Benefits) -->
+    <!-- ========================================================================= -->
+    <section id="핵심-기능혜택" class="py-20 md:py-28 px-6 bg-white/70 border-y border-secondaryBrown/15">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16 max-w-2xl mx-auto">
+          <span class="text-xs uppercase tracking-widest font-bold text-secondaryBrown block mb-3">
+            Key Features & Benefits
+          </span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-textColor mb-4 font-serif-title">
+            사색 산책 플래너가 드리는 3가지 핵심 혜택
+          </h2>
+          <p class="text-secondaryBrown text-sm md:text-base">
+            단순히 걷는 행위를 넘어, 일상의 분주함을 덜어내고 삶의 균형을 되찾는 체계적인 힐링 솔루션입니다.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!-- Benefit 1 -->
+          <div class="bg-cardBg p-8 rounded-3xl border border-secondaryBrown/15 shadow-sm hover:shadow-md hover:border-accentGreen transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 bg-accentGreen/10 text-accentGreen rounded-full flex items-center justify-center font-bold mx-auto mb-6 text-lg">
+                1
+              </div>
+              <div class="text-center">
+                <span class="text-[11px] font-semibold text-secondaryBrown bg-baseBg px-2.5 py-0.5 rounded-full inline-block mb-2">
+                  동네 보물 코스 발굴
+                </span>
+                <h3 class="text-lg md:text-xl font-bold mb-3 text-textColor font-serif-title">
+                  맞춤형 산책 코스
+                </h3>
+                <p class="text-secondaryBrown text-xs md:text-sm leading-relaxed mb-4">
+                  복잡한 도심 속에서 조용히 사색하기 좋은 최적의 로컬 산책 경로 발굴
+                </p>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-secondaryBrown/10 text-xs text-secondaryBrownDark leading-relaxed">
+              소음과 매연을 피해 나무 그늘이 짙고 차량 통행이 적은 골목길, 하천길, 숲길을 직접 실측하여 제공합니다.
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="bg-cardBg p-8 rounded-3xl border border-secondaryBrown/15 shadow-sm hover:shadow-md hover:border-accentGreen transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 bg-accentGreen/10 text-accentGreen rounded-full flex items-center justify-center font-bold mx-auto mb-6 text-lg">
+                2
+              </div>
+              <div class="text-center">
+                <span class="text-[11px] font-semibold text-secondaryBrown bg-baseBg px-2.5 py-0.5 rounded-full inline-block mb-2">
+                  소규모 감성 커뮤니티
+                </span>
+                <h3 class="text-lg md:text-xl font-bold mb-3 text-textColor font-serif-title">
+                  정기 힐링 프로그램
+                </h3>
+                <p class="text-secondaryBrown text-xs md:text-sm leading-relaxed mb-4">
+                  주민들과 함께 걸으며 마음을 돌보는 정기 오프라인 세션 운영
+                </p>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-secondaryBrown/10 text-xs text-secondaryBrownDark leading-relaxed">
+              주말 아침 또는 평일 해 질 녘, 큐레이터 민과 함께 소규모(최대 8인)로 모여 천천히 걷고 침묵과 대화의 균형을 누립니다.
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="bg-cardBg p-8 rounded-3xl border border-secondaryBrown/15 shadow-sm hover:shadow-md hover:border-accentGreen transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 bg-accentGreen/10 text-accentGreen rounded-full flex items-center justify-center font-bold mx-auto mb-6 text-lg">
+                3
+              </div>
+              <div class="text-center">
+                <span class="text-[11px] font-semibold text-secondaryBrown bg-baseBg px-2.5 py-0.5 rounded-full inline-block mb-2">
+                  영구 소장 e-book 가이드
+                </span>
+                <h3 class="text-lg md:text-xl font-bold mb-3 text-textColor font-serif-title">
+                  디지털 사색 일지
+                </h3>
+                <p class="text-secondaryBrown text-xs md:text-sm leading-relaxed mb-4">
+                  혼자서도 일상 속 여유를 이어갈 수 있는 e-book 및 가이드 제공
+                </p>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-secondaryBrown/10">
+              <p class="text-xs text-secondaryBrownDark leading-relaxed mb-3">
+                감각 깨우기 질문지, 감정 정리 템플릿, 계절별 산책 팁이 담긴 디지털 e-book을 무료 증정합니다.
+              </p>
+              <button onclick="openJournalModal()" class="w-full text-xs font-semibold text-accentGreen bg-accentGreenSoft hover:bg-accentGreenSoft/80 py-2 rounded-xl transition flex items-center justify-center gap-1 cursor-pointer">
+                <span>사색 일지 샘플 열람하기 →</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-accentGreenSoft/60 rounded-2xl p-6 md:p-8 border border-accentGreen/15 flex items-center gap-4 text-left">
+          <div class="w-10 h-10 rounded-full bg-accentGreen text-white flex items-center justify-center shrink-0 text-base">
+            ✨
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-accentGreen mb-1">
+              "사색 산책은 단순한 운동이 아닌 내면과의 다정한 대화입니다."
+            </h4>
+            <p class="text-xs text-secondaryBrownDark">
+              바쁜 일상에 치여 잃어버렸던 오감(바람의 소리, 나무의 색, 흙의 냄새)을 회복하는 웰니스 시간으로 꾸며집니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 추천 코스 큐레이션 쇼케이스 (Verdora "Shop Our Favorites" Style) -->
+    <!-- ========================================================================= -->
+    <section id="추천-코스" class="py-20 md:py-28 px-6 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest font-bold text-accentGreen block mb-2">
+            Curated Routes
+          </span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-textColor font-serif-title">
+            도심 속 사색 산책 대표 코스
+          </h2>
+          <p class="text-secondaryBrown text-sm md:text-base mt-2">
+            발걸음이 닿는 곳마다 당신만을 위한 아늑한 쉼표가 준비되어 있습니다.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none" id="courseFilters">
+          <button onclick="filterCourses('all')" class="course-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer bg-accentGreen text-white shadow-sm" data-category="all">
+            전체 코스
+          </button>
+          <button onclick="filterCourses('forest')" class="course-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer bg-white text-secondaryBrown hover:text-accentGreen border border-secondaryBrown/20" data-category="forest">
+            숲길 & 피톤치드
+          </button>
+          <button onclick="filterCourses('bookstore')" class="course-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer bg-white text-secondaryBrown hover:text-accentGreen border border-secondaryBrown/20" data-category="bookstore">
+            독립서점 & 티
+          </button>
+          <button onclick="filterCourses('stream')" class="course-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer bg-white text-secondaryBrown hover:text-accentGreen border border-secondaryBrown/20" data-category="stream">
+            물소리 하천길
+          </button>
+          <button onclick="filterCourses('sunset')" class="course-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer bg-white text-secondaryBrown hover:text-accentGreen border border-secondaryBrown/20" data-category="sunset">
+            노을 & 성찰
+          </button>
+        </div>
+      </div>
+
+      <!-- Course Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="coursesGrid">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="mt-12 bg-white rounded-3xl p-6 md:p-8 border border-accentGreen/20 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div class="space-y-1">
+          <h4 class="font-bold text-base md:text-lg text-textColor font-serif-title">
+            내가 사는 동네에도 사색 산책로가 필요하신가요?
+          </h4>
+          <p class="text-xs md:text-sm text-secondaryBrown">
+            베타 테스터 신청 시 희망 지역을 남겨주시면, 우리 동네 맞춤 코스를 직접 설계해 드립니다.
+          </p>
+        </div>
+        <button onclick="openApplyModal()" class="bg-accentGreen hover:bg-accentGreenHover text-white text-xs md:text-sm font-semibold py-3 px-6 rounded-full shadow transition transform hover:-translate-y-0.5 whitespace-nowrap cursor-pointer">
+          우리 동네 코스 신청하기
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. 신뢰 구축 (Trust & Evidence) -->
+    <!-- ========================================================================= -->
+    <section id="신뢰-구축" class="py-20 md:py-28 px-6 bg-white/70 border-t border-secondaryBrown/15">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16 max-w-2xl mx-auto">
+          <span class="text-xs uppercase tracking-widest font-bold text-secondaryBrown block mb-3">
+            Trust & Partnership
+          </span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-textColor mb-4 font-serif-title">
+            믿을 수 있는 지역 연계 및 검증 계획
+          </h2>
+          <p class="text-secondaryBrown text-sm md:text-base">
+            공공 인프라 및 로컬 공간과의 협업을 통해 신뢰할 수 있는 프로그램을 만듭니다.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <!-- Pillar 1 -->
+          <div class="bg-baseBg p-8 md:p-9 rounded-3xl border border-secondaryBrown/15 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-2xl bg-accentGreen/10 text-accentGreen flex items-center justify-center mb-6 text-2xl">
+              🏛️
+            </div>
+            <div class="inline-block text-xs font-semibold text-accentGreen bg-accentGreen/10 px-2.5 py-1 rounded-full mb-3">
+              신뢰성과 공공성
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-textColor font-serif-title">
+              🏛️ 지역 공공 인프라 협력
+            </h3>
+            <p class="text-secondaryBrownDark text-sm md:text-base leading-relaxed mb-4">
+              지역 공공도서관 및 평생학습관과의 연계를 통한 프로그램 공신력 확보 및 거점 활용
+            </p>
+            <ul class="text-xs text-secondaryBrown space-y-2 border-t border-secondaryBrown/10 pt-4">
+              <li>• 공공도서관 연계 '사색과 독서' 북큐레이션 프로그램 협력</li>
+              <li>• 평생학습관 야외 뜰 및 라운지 공간을 사전 모임 장소로 안전하게 활용</li>
+              <li>• 구청 및 지자체 문화 웰니스 사업 연계 확장 추진</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bg-baseBg p-8 md:p-9 rounded-3xl border border-secondaryBrown/15 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-2xl bg-[#8C6239]/10 text-[#8C6239] flex items-center justify-center mb-6 text-2xl">
+              📚
+            </div>
+            <div class="inline-block text-xs font-semibold text-[#8C6239] bg-[#8C6239]/10 px-2.5 py-1 rounded-full mb-3">
+              로컬 문화 상생
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-textColor font-serif-title">
+              📚 로컬 동네 서점 연대
+            </h3>
+            <p class="text-secondaryBrownDark text-sm md:text-base leading-relaxed mb-4">
+              지역 동네 서점 및 독립서점과의 협업으로 아늑한 실내 사색 공간 및 커뮤니티 연계 구축
+            </p>
+            <ul class="text-xs text-secondaryBrown space-y-2 border-t border-secondaryBrown/10 pt-4">
+              <li>• 산책 후 서점에서 따뜻한 차 한 잔과 함께 나만의 사색 일지 작성</li>
+              <li>• 서점 지기와의 협력으로 산책 참가자 전용 조용한 리딩 존 운영</li>
+              <li>• 지역 동네 서점 도서 구매 연계로 골목 상권 활성화 기여</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Curator Profile -->
+        <div class="bg-white rounded-3xl p-8 md:p-10 border border-secondaryBrown/15 shadow-sm mb-16">
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-accentGreenSoft shrink-0 shadow-md">
+              <img src="/assets/images/hero_healing_walk_1794011260208.jpg" alt="사색 산책 플래너 민" class="w-full h-full object-cover object-center" />
+            </div>
+            <div class="text-left space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-accentGreen bg-accentGreen/10 px-3 py-0.5 rounded-full">
+                  산책 큐레이터 소개
+                </span>
+                <span class="text-xs text-secondaryBrown">개인 블로그 누적 방문 15만+ 힐링 에디터</span>
+              </div>
+              <h3 class="text-2xl font-bold text-textColor font-serif-title">
+                "안녕하세요, 도심 속 사색 산책 플래너입니다."
+              </h3>
+              <p class="text-secondaryBrownDark text-sm md:text-base leading-relaxed">
+                거창한 여행이 아니어도 괜찮습니다. 직접 걸으며 기록한 동네 오솔길과 아늑한 독립서점을 연결하여,
+                지친 마음에 오롯이 나에게 집중하는 온전한 쉼표를 선물합니다.
+              </p>
+              <div class="flex items-center gap-4 text-xs font-medium text-secondaryBrown pt-1">
+                <span>🌱 개인 블로그 5년 힐링 기록</span>
+                <span>·</span>
+                <span>🗺️ 서울·경기 40여 개 코스 검증</span>
+                <span>·</span>
+                <span>🍵 15개 독립서점 파트너십</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-baseBg p-6 rounded-2xl border border-secondaryBrown/15 relative flex flex-col justify-between">
+            <div>
+              <span class="text-3xl text-accentGreen/40 font-serif leading-none block mb-2">“</span>
+              <p class="text-xs font-bold text-accentGreen mb-2">머릿속 소음이 씻겨 내려간 45분</p>
+              <p class="text-xs md:text-sm text-secondaryBrownDark leading-relaxed mb-4">
+                "매일 모니터와 회의에 갇혀 만성 번아웃이었는데, 주말 아침 큐레이터 민 님과 함께 침묵 속에 숲길을 걷고 서점에서 차를 마시며 비로소 마음이 편안해졌습니다."
+              </p>
+            </div>
+            <div class="text-xs text-secondaryBrown font-semibold flex items-center justify-between border-t border-secondaryBrown/10 pt-3">
+              <span>김서연 님</span>
+              <span class="text-[11px] font-normal">IT 서비스 기획자 (30대)</span>
+            </div>
+          </div>
+
+          <div class="bg-baseBg p-6 rounded-2xl border border-secondaryBrown/15 relative flex flex-col justify-between">
+            <div>
+              <span class="text-3xl text-accentGreen/40 font-serif leading-none block mb-2">“</span>
+              <p class="text-xs font-bold text-accentGreen mb-2">동네의 숨겨진 보물을 찾은 기분</p>
+              <p class="text-xs md:text-sm text-secondaryBrownDark leading-relaxed mb-4">
+                "늘 지나치던 동네 골목이었는데, 큐레이터의 안내 덕분에 숨은 느티나무 쉼터와 고요한 독립서점을 발견했습니다. 디지털 사색 일지는 지금도 매일 쓰고 있어요."
+              </p>
+            </div>
+            <div class="text-xs text-secondaryBrown font-semibold flex items-center justify-between border-t border-secondaryBrown/10 pt-3">
+              <span>박진우 님</span>
+              <span class="text-[11px] font-normal">프리랜서 디자이너 (40대)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. 가격 및 조건 (Pricing & Offer - MVP 특별가 카드) -->
+    <!-- ========================================================================= -->
+    <section id="가격-및-조건" class="py-20 md:py-28 px-6 bg-white/70 border-y border-secondaryBrown/15">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-xs uppercase tracking-widest font-bold text-accentGreen block mb-3">
+          Special Opportunity
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-textColor mb-4 font-serif-title">
+          초기 베타 테스터 특별 혜택
+        </h2>
+        <p class="text-secondaryBrown text-sm md:text-base mb-12">
+          일상 속 쉼이 필요한 분들을 위한 첫 번째 시범 운영 기회입니다.
+          소중한 피드백을 주시는 테스터 분들께 전 과정 무료 혜택과 특별 선물을 드립니다.
+        </p>
+
+        <!-- MVP Card -->
+        <div class="bg-white border-2 border-accentGreen rounded-[2.5rem] p-8 md:p-12 shadow-xl relative overflow-hidden text-left">
+          <div class="absolute top-6 right-6 bg-accentGreen text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+            <span>✨</span>
+            <span>MVP 특별가 · 선착순 20명</span>
+          </div>
+
+          <div class="mb-6">
+            <span class="text-xs font-bold text-[#8C6239] uppercase tracking-wider block mb-1">
+              Beta Cohort 1기
+            </span>
+            <h3 class="text-2xl md:text-3xl font-bold text-textColor font-serif-title">
+              도심 속 힐링 사색 프로그램 베타 세션
+            </h3>
+            <p class="text-secondaryBrown text-sm mt-1">
+              산책 코스 가이드 + 오프라인 사색 세션 + 디지털 일지 포함
+            </p>
+          </div>
+
+          <div class="py-6 border-y border-secondaryBrown/15 my-6">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="text-3xl md:text-4xl font-extrabold text-accentGreen">
+                선착순 무료 체험 / 정기 프로그램 할인
+              </span>
+            </div>
+            <p class="text-xs text-secondaryBrownDark">
+              * 간단한 3문항 설문 및 프로그램 피드백 작성 조건으로 전액 무료 지원됩니다.
+            </p>
+          </div>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-accentGreen/10 text-accentGreen flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+              <div>
+                <h4 class="text-sm font-bold text-textColor">동네 시크릿 산책 코스 맵 제공</h4>
+                <p class="text-xs text-secondaryBrown mt-0.5">큐레이터가 직접 실측한 GPS 코스 & 조용한 쉼터 지도</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-accentGreen/10 text-accentGreen flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+              <div>
+                <h4 class="text-sm font-bold text-textColor">독립서점 연계 사색 모임 참여</h4>
+                <p class="text-xs text-secondaryBrown mt-0.5">아늑한 북카페에서 따뜻한 웰컴 티 1잔과 함께하는 마음 정돈</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-accentGreen/10 text-accentGreen flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+              <div>
+                <h4 class="text-sm font-bold text-textColor">프로그램 피드백 참여 시 사색 e-book 증정</h4>
+                <p class="text-xs text-secondaryBrown mt-0.5">평생 소장 가능한 감정 정돈 질문지와 사색 템플릿 PDF</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-accentGreen/10 text-accentGreen flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+              <div>
+                <h4 class="text-sm font-bold text-textColor">큐레이터 민의 1:1 맞춤형 피드백</h4>
+                <p class="text-xs text-secondaryBrown mt-0.5">나의 걸음 템포와 번아웃 상황에 맞춘 맞춤형 코스 조언</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <button onclick="openApplyModal()" class="w-full bg-accentGreen hover:bg-accentGreenHover text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2 cursor-pointer">
+              <span>사색 산책 베타 테스터 신청하기 (무료)</span>
+              <span>→</span>
+            </button>
+
+            <button onclick="openJournalModal()" class="w-full bg-baseBg hover:bg-accentGreenSoft text-accentGreen font-semibold py-3 px-6 rounded-full border border-accentGreen/20 transition text-sm flex items-center justify-center gap-2 cursor-pointer">
+              <span>🎁 증정 예정인 디지털 사색 일지(e-book) 미리보기</span>
+            </button>
+          </div>
+
+          <div class="mt-6 flex items-center justify-center gap-2 text-xs text-secondaryBrown">
+            <span>🛡️</span>
+            <span>신청 정보는 안전하게 보관되며 세션 확정 후 개별 안내드립니다.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 주간 사색 레터 배너 ("Join the Verdora Circle" Style) -->
+    <!-- ========================================================================= -->
+    <section class="px-6 my-16">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-[#1D3B1A] text-white rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden shadow-2xl border border-white/10">
+          <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-accentGreen/40 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid lg:grid-cols-12 gap-10 items-center relative z-10">
+            <div class="lg:col-span-7 space-y-4 text-left">
+              <div class="inline-flex items-center gap-2 text-xs font-semibold text-[#A3D9A5] bg-white/10 px-3 py-1 rounded-full">
+                <span>✨</span>
+                <span>주간 사색 레터</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif-title leading-tight">
+                금요일 아침, 당신의 편지함으로 찾아가는 동네 쉼표
+              </h3>
+              <p class="text-sm md:text-base text-white/80 leading-relaxed max-w-xl">
+                이번 주말 걷기 좋은 날씨와 동네 숨은 오솔길 큐레이션, 마음에 작은 파문을 던지는 사색 질문 1가지를 전해드립니다.
+              </p>
+
+              <div id="newsletterSuccess" class="hidden bg-white/10 border border-white/20 p-4 rounded-2xl flex items-center gap-3 text-white max-w-md">
+                <span class="text-2xl">🌱</span>
+                <div class="text-xs md:text-sm">
+                  <strong>구독이 완료되었습니다!</strong> 첫 번째 사색 가이드 레터가 곧 발송됩니다.
+                </div>
+              </div>
+
+              <form id="newsletterForm" onsubmit="handleNewsletter(event)" class="pt-2 flex flex-col sm:flex-row gap-3 max-w-md">
+                <input type="email" required placeholder="이메일 주소를 입력해 주세요" class="flex-1 px-5 py-3.5 rounded-full bg-white/90 text-textColor placeholder:text-secondaryBrown text-sm focus:outline-none focus:ring-2 focus:ring-[#A3D9A5]" />
+                <button type="submit" class="bg-[#A3D9A5] hover:bg-[#8EC990] text-[#1D3B1A] font-bold px-6 py-3.5 rounded-full text-sm transition flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer shadow-md">
+                  <span>레터 구독</span>
+                  <span>↗</span>
+                </button>
+              </form>
+            </div>
+
+            <div class="lg:col-span-5 bg-white/5 backdrop-blur-md rounded-3xl p-7 md:p-8 border border-white/10 text-left relative">
+              <span class="text-5xl font-serif text-[#A3D9A5]/40 leading-none block mb-2 font-display-en">“</span>
+              <p class="text-base sm:text-lg font-serif-title text-white/95 leading-relaxed mb-4">
+                천천히 걷는 걸음 속에서, 비로소 잃어버렸던 나 자신의 다정한 목소리가 들리기 시작합니다.
+              </p>
+              <div class="text-xs text-[#A3D9A5] font-medium flex items-center justify-between border-t border-white/10 pt-3">
+                <span>사색 산책 큐레이터 민(Min)</span>
+                <span>🌿 Mindful Walk Curator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 7. 클로징 및 CTA (Closing & Call to Action) -->
+    <!-- ========================================================================= -->
+    <section id="클로징-및-cta" class="py-24 md:py-32 px-6 text-center max-w-4xl mx-auto relative">
+      <div class="inline-block py-1 px-4 rounded-full bg-accentGreen/10 text-accentGreen text-xs md:text-sm font-semibold mb-6">
+        ✨ 당신을 위한 도심 속 쉼표
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-textColor font-serif-title leading-tight">
+        오늘, 당신의 동네에서 <span class="text-accentGreen">작은 쉼표</span>를 만나보세요
+      </h2>
+
+      <p class="text-base sm:text-lg md:text-xl text-secondaryBrown mb-10 max-w-2xl mx-auto leading-relaxed">
+        복잡한 생각을 비우고 마음이 가벼워지는 산책길에 당신을 초대합니다.
+        혼자 걷기 어려웠던 길도, 다정한 큐레이터와 함께라면 편안한 회복의 여정이 됩니다.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openApplyModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accentGreen hover:bg-accentGreenHover text-white font-bold text-base py-4 px-9 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 cursor-pointer">
+          <span>사색 프로그램 무료 베타 신청하기</span>
+          <span>→</span>
+        </button>
+
+        <a href="https://open.kakao.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-bold text-base py-4 px-8 rounded-full shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 cursor-pointer">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.708 4.8 4.27 6.054l-1.08 3.98c-.1.358.26.657.57.472l4.73-2.88c.17.014.34.024.51.024 4.97 0 9-3.185 9-7.115S16.97 3 12 3z"/></svg>
+          <span>카카오톡으로 참여 문의하기</span>
+        </a>
+      </div>
+
+      <p class="text-xs text-secondaryBrown mt-6">
+        * 선착순 베타 테스터는 조기 마감될 수 있으며, 문의 사항은 24시간 이내에 답변드립니다.
+      </p>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- Footer -->
+  <!-- ========================================================================= -->
+  <footer class="py-12 px-6 bg-baseBg border-t border-secondaryBrown/15 text-xs text-secondaryBrown">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center md:text-left">
+        <div class="font-bold text-sm text-accentGreen font-serif-title flex items-center justify-center md:justify-start gap-1.5">
+          <span>🌿</span>
+          <span>도심 속 힐링 사색 산책 플래너</span>
+        </div>
+        <p class="text-[11px] text-secondaryBrown">
+          로컬 인프라(공공도서관, 평생학습관, 동네 독립서점) 연계 힐링 커뮤니티 프로젝트
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-secondaryBrownDark">
+        <a href="#문제-정의" class="hover:text-accentGreen transition">일상의 고민</a>
+        <a href="#솔루션-제시" class="hover:text-accentGreen transition">솔루션</a>
+        <a href="#핵심-기능혜택" class="hover:text-accentGreen transition">혜택 안내</a>
+        <a href="#추천-코스" class="hover:text-accentGreen transition">산책 코스</a>
+        <a href="#신뢰-구축" class="hover:text-accentGreen transition">협력 공간</a>
+        <a href="#가격-및-조건" class="hover:text-accentGreen transition">베타 혜택</a>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-secondaryBrown/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-secondaryBrown text-[11px]">
+      <p>© 2026 도심 속 힐링 사색 산책 플래너 (산책 큐레이터). All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <span>문의: mindfulwalk@localhealing.kr</span>
+        <span>·</span>
+        <span>운영: 산책 큐레이터 민</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 1: 베타 테스터 신청 모달 & 참가 바우처 티켓 생성 -->
+  <!-- ========================================================================= -->
+  <div id="applyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="relative w-full max-w-xl bg-white rounded-[2rem] shadow-2xl border border-secondaryBrown/20 overflow-hidden max-h-[92vh] flex flex-col">
+      <div class="flex items-center justify-between p-6 border-b border-secondaryBrown/15 bg-baseBg">
+        <div class="flex items-center gap-2">
+          <span class="w-8 h-8 rounded-full bg-accentGreen/10 text-accentGreen flex items-center justify-center text-sm font-bold">🌿</span>
+          <div>
+            <h3 class="text-lg font-bold text-textColor font-serif-title">사색 산책 프로그램 베타 테스터 신청</h3>
+            <p class="text-xs text-secondaryBrown">선착순 20명 한정 무료 체험 & 디지털 사색 일지 증정</p>
+          </div>
+        </div>
+        <button onclick="closeApplyModal()" class="p-2 rounded-full hover:bg-black/5 text-secondaryBrown hover:text-textColor transition cursor-pointer">✕</button>
+      </div>
+
+      <div class="p-6 md:p-8 overflow-y-auto space-y-6">
+        <!-- Form view -->
+        <form id="applyForm" onsubmit="handleApplySubmit(event)" class="space-y-5 text-left">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-textColor mb-1.5">이름 (참가자 성명) *</label>
+              <input type="text" id="applyName" required placeholder="홍길동" class="w-full px-4 py-3 rounded-xl border border-secondaryBrown/20 bg-baseBg text-sm focus:outline-none focus:ring-2 focus:ring-accentGreen" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-textColor mb-1.5">연락처 (휴대폰 번호) *</label>
+              <input type="tel" id="applyPhone" required placeholder="010-1234-5678" class="w-full px-4 py-3 rounded-xl border border-secondaryBrown/20 bg-baseBg text-sm focus:outline-none focus:ring-2 focus:ring-accentGreen" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-textColor mb-1.5">이메일 주소 (사색 e-book 발송용) *</label>
+            <input type="email" id="applyEmail" required placeholder="healing@example.com" class="w-full px-4 py-3 rounded-xl border border-secondaryBrown/20 bg-baseBg text-sm focus:outline-none focus:ring-2 focus:ring-accentGreen" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-textColor mb-1.5">참여 희망 사색 산책 코스 *</label>
+            <select id="applyCourse" class="w-full px-4 py-3 rounded-xl border border-secondaryBrown/20 bg-baseBg text-sm focus:outline-none focus:ring-2 focus:ring-accentGreen">
+              <option value="초록빛 숲길 & 고요한 책방 코스">초록빛 숲길 & 고요한 책방 코스 (50분 · 쉬움)</option>
+              <option value="물소리 천변길 & 징검다리 코스">물소리 천변길 & 징검다리 코스 (40분 · 매우 쉬움)</option>
+              <option value="골목길 고목나무 & 티 살롱 코스">골목길 고목나무 & 티 살롱 코스 (55분 · 보통)</option>
+              <option value="노을 언덕 벤치 & 디지털 일지 코스">노을 언덕 벤치 & 디지털 일지 코스 (45분 · 쉬움)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-textColor mb-1.5">참여 희망 시간대 *</label>
+            <select id="applySlot" class="w-full px-4 py-3 rounded-xl border border-secondaryBrown/20 bg-baseBg text-sm focus:outline-none focus:ring-2 focus:ring-accentGreen">
+              <option value="토요일 오전 10:00 (오전 숲길 산책)">토요일 오전 10:00 (오전 숲길 산책)</option>
+              <option value="일요일 오전 10:00 (오전 하천 산책)">일요일 오전 10:00 (오전 하천 산책)</option>
+              <option value="수요일 일몰 18:30 (저녁 사색 노을길)">수요일 일몰 18:30 (저녁 사색 노을길)</option>
+              <option value="자율 참여 (e-book 및 코스 지도 수령)">자율 참여 (e-book 및 코스 지도 수령)</option>
+            </select>
+          </div>
+
+          <div class="p-3 bg-accentGreenSoft rounded-xl text-[11px] text-accentGreen flex items-center gap-2">
+            <span>✨</span>
+            <span>베타 테스터 선정 시 <strong>사색 일지 e-book 무료 증정</strong> 및 웰컴 티가 제공됩니다.</span>
+          </div>
+
+          <button type="submit" class="w-full bg-accentGreen hover:bg-accentGreenHover text-white font-bold py-3.5 rounded-full shadow-md hover:shadow-lg transition cursor-pointer text-sm">
+            사색 프로그램 베타 신청서 제출하기 (선착순)
+          </button>
+        </form>
+
+        <!-- Ticket View (hidden by default) -->
+        <div id="ticketContainer" class="hidden space-y-6 text-center">
+          <div class="w-16 h-16 rounded-full bg-accentGreenSoft text-accentGreen flex items-center justify-center mx-auto text-3xl">
+            ✓
+          </div>
+          <div>
+            <span class="text-xs font-bold text-accentGreen uppercase tracking-wider bg-accentGreen/10 px-3 py-1 rounded-full">
+              신청 접수 완료
+            </span>
+            <h4 class="text-2xl font-bold text-textColor mt-2 font-serif-title" id="ticketUserName">
+              참가자 님의 사색 산책 초대권
+            </h4>
+            <p class="text-xs md:text-sm text-secondaryBrown mt-1">
+              남겨주신 연락처로 집결 장소와 준비사항을 안내해 드립니다.
+            </p>
+          </div>
+
+          <div class="bg-[#FAF8F5] border-2 border-dashed border-accentGreen/40 rounded-3xl p-6 text-left relative overflow-hidden shadow-sm">
+            <div class="flex items-center justify-between pb-4 border-b border-secondaryBrown/15">
+              <span class="font-bold text-sm text-accentGreen font-serif-title">🎟️ 사색 산책 베타 참가권</span>
+              <span class="font-mono text-xs font-bold text-[#8C6239] bg-white px-2 py-0.5 rounded border border-secondaryBrown/20" id="ticketCode">MW-8421-2026</span>
+            </div>
+            <div class="py-4 space-y-2.5 text-xs md:text-sm text-secondaryBrownDark">
+              <div class="flex items-center justify-between">
+                <span class="text-secondaryBrown">신청 코스:</span>
+                <strong class="text-textColor" id="ticketCourse">초록빛 숲길 & 고요한 책방 코스</strong>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-secondaryBrown">일정:</span>
+                <strong class="text-textColor" id="ticketSlot">토요일 오전 10:00</strong>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-secondaryBrown">특별 혜택:</span>
+                <strong class="text-[#8C6239]">디지털 사색 일지 PDF 무료 증정</strong>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-secondaryBrown/15 flex items-center justify-between text-[11px] text-secondaryBrown">
+              <span>주관: 사색 산책 플래너 민</span>
+              <span>상태: 참가 확정 완료</span>
+            </div>
+          </div>
+
+          <button onclick="alert('참가권이 확인되었습니다. 모임 당일 큐레이터에게 보여주세요!'); closeApplyModal();" class="w-full bg-accentGreen text-white py-3.5 rounded-full text-sm font-semibold cursor-pointer">
+            참가권 확인 및 완료
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 2: 디지털 사색 일지 (e-book) 미리보기 모달 -->
+  <!-- ========================================================================= -->
+  <div id="journalModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="relative w-full max-w-2xl bg-white rounded-[2rem] shadow-2xl border border-secondaryBrown/20 overflow-hidden flex flex-col max-h-[92vh]">
+      <div class="flex items-center justify-between p-6 border-b border-secondaryBrown/15 bg-baseBg">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">📖</span>
+          <div>
+            <h3 class="text-base md:text-lg font-bold text-textColor font-serif-title">
+              디지털 사색 일지 (e-book) 샘플 미리보기
+            </h3>
+            <p class="text-[11px] text-secondaryBrown">
+              베타 테스터 전원에게 증정되는 영구 소장 템플릿입니다.
+            </p>
+          </div>
+        </div>
+        <button onclick="closeJournalModal()" class="p-2 rounded-full hover:bg-black/5 text-secondaryBrown hover:text-textColor transition cursor-pointer">✕</button>
+      </div>
+
+      <div class="p-6 md:p-8 overflow-y-auto space-y-6">
+        <div class="bg-[#FAF8F5] rounded-3xl p-6 md:p-8 border border-secondaryBrown/20 shadow-inner relative text-left" id="journalPageContainer">
+          <!-- Page 1 (default) -->
+          <div id="journalPage1">
+            <div class="flex items-center justify-between text-xs text-secondaryBrown pb-3 border-b border-secondaryBrown/15 mb-4">
+              <span class="font-serif-title font-bold text-accentGreen">도심 속 힐링 사색 산책 저널</span>
+              <span>1 / 3</span>
+            </div>
+            <h4 class="text-lg md:text-xl font-bold text-textColor font-serif-title mb-1">Page 01. 출발 전 마음 비우기 (Unloading)</h4>
+            <p class="text-xs text-secondaryBrown mb-4">걸음을 딛기 전, 머릿속 소음을 잠시 내려놓는 의식</p>
+            <blockquote class="text-xs md:text-sm font-serif-title italic text-secondaryBrownDark bg-white/70 p-3.5 rounded-xl border-l-2 border-[#8C6239] mb-5">
+              “빠르게 걷지 않아도 괜찮습니다. 오늘의 목표는 목적지가 아니라 걸음 그 자체입니다.”
+            </blockquote>
+            <div class="space-y-4 text-xs md:text-sm text-secondaryBrownDark">
+              <div class="p-4 bg-baseBg rounded-2xl border border-secondaryBrown/15">
+                <h5 class="font-bold text-accentGreen mb-2">🍃 스마트폰 비행기 모드 전환</h5>
+                <p>산책을 시작하기 전 30분 동안은 알림을 꺼둡니다. 세상의 속도 대신 나만의 호흡에 집중해 보세요.</p>
+              </div>
+              <div class="p-4 bg-baseBg rounded-2xl border border-secondaryBrown/15">
+                <h5 class="font-bold text-accentGreen mb-2">💭 오늘 비워내고 싶은 생각 적기</h5>
+                <p class="italic text-secondaryBrown bg-white p-3 rounded-xl border border-dashed border-secondaryBrown/30">[ 예시: "완벽하게 끝내야 한다는 압박감, 타인의 시선에 대한 불안" ]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 2 -->
+          <div id="journalPage2" class="hidden">
+            <div class="flex items-center justify-between text-xs text-secondaryBrown pb-3 border-b border-secondaryBrown/15 mb-4">
+              <span class="font-serif-title font-bold text-accentGreen">도심 속 힐링 사색 산책 저널</span>
+              <span>2 / 3</span>
+            </div>
+            <h4 class="text-lg md:text-xl font-bold text-textColor font-serif-title mb-1">Page 02. 걸음 속 오감 깨우기 (Sensory Awareness)</h4>
+            <p class="text-xs text-secondaryBrown mb-4">발바닥의 감각과 주변 자연의 소리에 귀 기울이기</p>
+            <blockquote class="text-xs md:text-sm font-serif-title italic text-secondaryBrownDark bg-white/70 p-3.5 rounded-xl border-l-2 border-[#8C6239] mb-5">
+              “발바닥이 흙을 누르는 단단한 감각, 볼을 스치는 서늘한 바람을 느껴보세요.”
+            </blockquote>
+            <div class="space-y-3 text-xs md:text-sm text-secondaryBrownDark">
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3 bg-baseBg rounded-xl border border-secondaryBrown/15">
+                  <span class="font-bold text-accentGreen block mb-1">👂 들려오는 소리</span>
+                  <p class="text-[11px] text-secondaryBrown">나뭇잎 사각거림, 졸졸 흐르는 개울 소리, 먼 새소리</p>
+                </div>
+                <div class="p-3 bg-baseBg rounded-xl border border-secondaryBrown/15">
+                  <span class="font-bold text-accentGreen block mb-1">👀 눈에 담은 색채</span>
+                  <p class="text-[11px] text-secondaryBrown">연두빛 새순, 따뜻한 오후의 주황빛 햇살</p>
+                </div>
+              </div>
+              <div class="p-3.5 bg-accentGreenSoft rounded-xl border border-accentGreen/20">
+                <span class="font-bold text-accentGreen block mb-1">🌿 오늘의 감각 질문</span>
+                <p class="text-xs leading-relaxed text-textColor">“오늘 마주친 풍경 중 내 마음에 가장 평화로운 안식을 준 장면은 무엇이었나요?”</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 3 -->
+          <div id="journalPage3" class="hidden">
+            <div class="flex items-center justify-between text-xs text-secondaryBrown pb-3 border-b border-secondaryBrown/15 mb-4">
+              <span class="font-serif-title font-bold text-accentGreen">도심 속 힐링 사색 산책 저널</span>
+              <span>3 / 3</span>
+            </div>
+            <h4 class="text-lg md:text-xl font-bold text-textColor font-serif-title mb-1">Page 03. 독립서점 사색 노트 (Reflection & Tea)</h4>
+            <p class="text-xs text-secondaryBrown mb-4">산책을 마치고 따뜻한 차 한 잔과 함께 남기는 기록</p>
+            <blockquote class="text-xs md:text-sm font-serif-title italic text-secondaryBrownDark bg-white/70 p-3.5 rounded-xl border-l-2 border-[#8C6239] mb-5">
+              “비워낸 마음에 따뜻한 온기를 채우는 독립서점에서의 쉼표 시간.”
+            </blockquote>
+            <div class="space-y-4 text-xs md:text-sm text-secondaryBrownDark">
+              <div class="p-4 bg-baseBg rounded-2xl border border-secondaryBrown/15">
+                <h5 class="font-bold text-accentGreen mb-1.5">☕ 오늘 머무른 공간과 곁들인 차</h5>
+                <p class="text-xs text-secondaryBrown">골목 독립서점 [서재와 뜰] 윈도우 시트 · 따뜻한 캐모마일 허브티</p>
+              </div>
+              <div class="p-4 bg-white rounded-2xl border border-accentGreen/20 shadow-sm">
+                <h5 class="font-bold text-accentGreen mb-2">✒️ 오늘 발견한 나를 위한 한 줄 문장</h5>
+                <p class="font-serif-title italic text-sm text-textColor bg-[#FAF8F5] p-3.5 rounded-xl border-l-2 border-accentGreen">
+                  “속도를 늦추자, 마침내 풍경이 말을 걸어왔다.”
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center justify-between pt-2">
+          <button id="journalPrevBtn" onclick="setJournalPage(currentJournalPage - 1)" class="px-4 py-2 rounded-full text-xs font-semibold border border-secondaryBrown/20 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-baseBg transition cursor-pointer">
+            ← 이전 페이지
+          </button>
+          <div class="flex gap-1.5">
+            <span class="journal-dot w-6 h-2.5 rounded-full bg-accentGreen transition-all"></span>
+            <span class="journal-dot w-2.5 h-2.5 rounded-full bg-secondaryBrown/30 transition-all"></span>
+            <span class="journal-dot w-2.5 h-2.5 rounded-full bg-secondaryBrown/30 transition-all"></span>
+          </div>
+          <button id="journalNextBtn" onclick="setJournalPage(currentJournalPage + 1)" class="px-4 py-2 rounded-full text-xs font-semibold border border-secondaryBrown/20 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-baseBg transition cursor-pointer">
+            다음 페이지 →
+          </button>
+        </div>
+      </div>
+
+      <div class="p-5 border-t border-secondaryBrown/15 bg-baseBg flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span class="text-xs text-secondaryBrown">
+          베타 테스터에 신청하시면 정식 32페이지 PDF 일지를 무료로 다운로드받으실 수 있습니다.
+        </span>
+        <button onclick="closeJournalModal(); openApplyModal();" class="w-full sm:w-auto bg-accentGreen hover:bg-accentGreenHover text-white text-xs font-bold py-2.5 px-6 rounded-full shadow transition whitespace-nowrap cursor-pointer">
+          베타 신청하고 e-book 받기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 3: 코스 상세 경로 & 체크포인트 모달 -->
+  <!-- ========================================================================= -->
+  <div id="courseModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="relative w-full max-w-2xl bg-white rounded-[2rem] shadow-2xl border border-secondaryBrown/20 overflow-hidden flex flex-col max-h-[92vh]">
+      <div class="relative h-48 md:h-56 w-full bg-baseBg shrink-0">
+        <img id="modalCourseImage" src="" alt="코스 이미지" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
+
+        <button onclick="closeCourseModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/60 transition cursor-pointer">✕</button>
+
+        <div class="absolute bottom-4 left-6 right-6 text-white text-left">
+          <span id="modalCourseKicker" class="text-[11px] font-bold uppercase tracking-wider bg-accentGreen px-2.5 py-0.5 rounded-full inline-block mb-1.5"></span>
+          <h3 id="modalCourseTitle" class="text-xl md:text-2xl font-bold font-serif-title text-white"></h3>
+          <div class="flex items-center gap-3 text-xs text-white/90 mt-1 font-medium">
+            <span id="modalCourseMeta"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 md:p-8 overflow-y-auto space-y-6 text-left">
+        <p id="modalCourseSummary" class="text-sm text-secondaryBrownDark leading-relaxed"></p>
+
+        <div class="bg-[#FAF8F5] p-4 md:p-5 rounded-2xl border border-secondaryBrown/15">
+          <div class="text-accentGreen font-bold text-xs uppercase tracking-wider mb-1.5">
+            ✨ 이 코스의 사색 질문 (Mindful Prompt)
+          </div>
+          <p id="modalCoursePrompt" class="text-xs md:text-sm italic font-serif-title text-textColor"></p>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-textColor font-serif-title mb-4 flex items-center gap-2">
+            🧭 체크포인트별 추천 동선
+          </h4>
+          <div class="space-y-4 relative pl-4 border-l-2 border-accentGreen/30 ml-2" id="modalCheckpoints">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-accentGreenSoft border border-accentGreen/20 flex items-start gap-3">
+          <span class="text-accentGreen text-lg mt-0.5">📍</span>
+          <div>
+            <span id="modalPartnerType" class="text-[11px] font-bold text-accentGreen block"></span>
+            <h5 id="modalPartnerName" class="text-sm font-bold text-textColor"></h5>
+            <p id="modalPartnerHighlight" class="text-xs text-secondaryBrownDark mt-0.5"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-5 border-t border-secondaryBrown/15 bg-baseBg flex flex-col sm:flex-row items-center justify-between gap-3">
+        <button onclick="closeCourseModal()" class="w-full sm:w-auto px-6 py-2.5 rounded-full border border-secondaryBrown/20 text-xs font-semibold text-secondaryBrownDark hover:bg-white transition cursor-pointer">
+          닫기
+        </button>
+        <button id="modalApplyBtn" onclick="applyWithCurrentCourse()" class="w-full sm:w-auto bg-accentGreen hover:bg-accentGreenHover text-white text-xs md:text-sm font-bold py-3 px-8 rounded-full shadow transition flex items-center justify-center gap-2 cursor-pointer">
+          이 코스로 베타 세션 신청하기 →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- Embedded JavaScript for All Interactivity -->
+  <!-- ========================================================================= -->
+  <script>
+    // Data definition for courses
+    const COURSES = [
+      {
+        id: 'course-1',
+        title: '초록빛 숲길 & 고요한 책방 코스',
+        kicker: '나무 그늘 아래 깊은 호흡',
+        category: 'forest',
+        duration: '50분',
+        distance: '2.4km',
+        difficulty: '쉬움',
+        mood: '피톤치드와 종이 냄새가 주는 평온함',
+        image: '/assets/images/hero_healing_walk_1794011260208.jpg',
+        summary: '울창한 동네 숲길 산책로를 천천히 걸은 후, 골목 어귀에 숨겨진 독립서점에서 따뜻한 허브티와 함께 나만의 사색을 기록합니다.',
+        checkpoints: [
+          { spot: '근린공원 느티나무 쉼터', desc: '가벼운 스트레칭과 스마트폰 비행기 모드 전환', time: '10분' },
+          { spot: '솔바람 흙길 오솔길', desc: '발바닥의 감각에 집중하는 침묵의 걷기', time: '20분' },
+          { spot: '언덕 위 사색 벤치', desc: '탁 트인 도심 전경을 바라보며 깊은 복식호흡', time: '10분' },
+          { spot: '골목 독립서점 [서재와 뜰]', desc: '웰컴 티 한 잔과 함께 디지털 사색 일지 작성', time: '10분' }
+        ],
+        partnerSpace: {
+          name: '독립서점 [서재와 뜰]',
+          type: '로컬 독립서점 협력 거점',
+          highlight: '사색 프로그램 참가자 전용 조용한 리딩 소파 & 웰컴 허브티 제공'
+        },
+        mindfulPrompt: '오늘 걷는 동안 내 마음을 가장 무겁게 짓누르던 생각 하나를 나뭇가지에 걸어두고 와보세요.'
+      },
+      {
+        id: 'course-2',
+        title: '물소리 천변길 & 징검다리 코스',
+        kicker: '마음의 소음을 흘려보내는 물길',
+        category: 'stream',
+        duration: '40분',
+        distance: '1.8km',
+        difficulty: '매우 쉬움',
+        mood: '맑은 물소리와 버드나무 바람길',
+        image: '/assets/images/stream_park_course_1794011261561.jpg',
+        summary: '도심 속 생태 하천을 따라 졸졸 흐르는 물소리에 귀 기울이며, 복잡하게 엉킨 잡념을 물결과 함께 흘려보내는 치유 코스입니다.',
+        checkpoints: [
+          { spot: '천변 진입 버드나무 길', desc: '물소리 청각에 오롯이 집중하며 첫 발 딛기', time: '10분' },
+          { spot: '돌 징검다리 건너기', desc: '한 걸음 한 걸음 균형을 잡으며 잡념 비우기', time: '10분' },
+          { spot: '수변 갈대 쉼터', desc: '바람에 스치는 잎사귀 소리 녹음 및 메모', time: '10분' },
+          { spot: '동네 평생학습관 뜰', desc: '시원한 물 한 잔과 함께 하루의 감정 환기', time: '10분' }
+        ],
+        partnerSpace: {
+          name: '로컬 평생학습관 열린 갤러리',
+          type: '지역 공공 인프라 협력 거점',
+          highlight: '안전한 실내 휴게 공간 및 지역 주민 사색 커뮤니티 게시판'
+        },
+        mindfulPrompt: '흘러가는 물을 바라보며, 내가 통제할 수 없는 걱정들을 하나씩 떠나보내 봅니다.'
+      },
+      {
+        id: 'course-3',
+        title: '골목길 고목나무 & 티 살롱 코스',
+        kicker: '정겨운 돌담과 따스한 온기',
+        category: 'bookstore',
+        duration: '55분',
+        distance: '2.1km',
+        difficulty: '보통',
+        mood: '따스한 차 한 잔과 아늑한 공간의 위로',
+        image: '/assets/images/bookstore_healing_space_1794011261258.jpg',
+        summary: '오래된 동네 골목의 정취와 보호수를 지나, 조용한 로컬 북카페에서 큐레이터의 질문 카드로 내면의 감정을 마주합니다.',
+        checkpoints: [
+          { spot: '300년 보호수 은행나무', desc: '나무 기둥의 온도를 느끼며 서있는 명상', time: '10분' },
+          { spot: '옛 정취 골목 돌담길', desc: '시각적 자극을 줄이고 조용히 발걸음 세어보기', time: '20분' },
+          { spot: '소소한 꽃 화분 계단', desc: '일상의 작은 아름다움 1가지 사진 찍기', time: '10분' },
+          { spot: '동네 북살롱 [온기]', desc: '큐레이터 질문 카드로 10분 필사 및 대화', time: '15분' }
+        ],
+        partnerSpace: {
+          name: '동네 북살롱 [온기]',
+          type: '로컬 문화 공간 협력',
+          highlight: '산책 후 마음 진정에 좋은 캐모마일 블렌딩 티와 전용 필사 노트'
+        },
+        mindfulPrompt: '가장 최근에 마음이 따뜻했던 순간은 언제였나요? 그 감정을 불러와 봅니다.'
+      },
+      {
+        id: 'course-4',
+        title: '노을 언덕 벤치 & 디지털 일지 코스',
+        kicker: '하루의 노을을 마음에 담는 시간',
+        category: 'sunset',
+        duration: '45분',
+        distance: '2.0km',
+        difficulty: '쉬움',
+        mood: '주황빛 저녁 하늘과 평화로운 고요',
+        image: '/assets/images/mindful_journal_desk_1794011261723.jpg',
+        summary: '해 질 녘 노을빛이 내리는 완만한 구릉지를 걸어 언덕 위 벤치에서 하루를 감사로 마무리하는 힐링 일지 작성 코스입니다.',
+        checkpoints: [
+          { spot: '공공도서관 뒤편 산책로', desc: '오늘 하루 수고한 나 자신에게 건네는 따뜻한 인사', time: '10분' },
+          { spot: '노을 전망대 나무 데크', desc: '점점 물드는 붉은 하늘을 바라보며 3분 묵상', time: '15분' },
+          { spot: '잔디밭 사색 벤치', desc: '스마트폰에 사색 일지 앱 혹은 메모장에 오늘의 문장 적기', time: '10분' },
+          { spot: '귀갓길 가로등 산책길', desc: '가벼워진 발걸음으로 평온하게 하루 매듭짓기', time: '10분' }
+        ],
+        partnerSpace: {
+          name: '시립 구립도서관 지혜의 숲',
+          type: '공공도서관 협력 거점',
+          highlight: '사색 큐레이터 추천 도서 큐레이션 코너 상설 운영'
+        },
+        mindfulPrompt: '오늘 나에게 일어났던 일 중 작지만 고마웠던 순간 3가지를 떠올려보세요.'
+      }
+    ];
+
+    // Wishlist state
+    let likedCourses = ['course-1'];
+    let selectedCourseForModal = null;
+
+    // Render courses
+    function renderCourses(category = 'all') {
+      const container = document.getElementById('coursesGrid');
+      const filtered = category === 'all' ? COURSES : COURSES.filter(c => c.category === category);
+
+      container.innerHTML = filtered.map(course => {
+        const isLiked = likedCourses.includes(course.id);
+        return `
+          <div onclick="openCourseModal('${course.id}')" class="bg-white rounded-3xl border border-secondaryBrown/15 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+            <div>
+              <div class="relative aspect-[4/3] overflow-hidden bg-baseBg">
+                <img src="${course.image}" alt="${course.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <button onclick="toggleLike('${course.id}', event)" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center transition shadow-sm hover:bg-white text-base">
+                  ${isLiked ? '❤️' : '🤍'}
+                </button>
+                <div class="absolute bottom-3 left-3 bg-[#2C2C2C]/70 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-0.5 rounded-full">
+                  ${course.kicker}
+                </div>
+              </div>
+
+              <div class="p-5">
+                <div class="flex items-center gap-2 text-[11px] text-secondaryBrown font-medium mb-1.5">
+                  <span>⏱️ ${course.duration}</span>
+                  <span>·</span>
+                  <span>${course.distance}</span>
+                  <span>·</span>
+                  <span class="text-accentGreen font-semibold">난이도: ${course.difficulty}</span>
+                </div>
+
+                <h3 class="text-base font-bold text-textColor group-hover:text-accentGreen transition font-serif-title line-clamp-1 mb-2">
+                  ${course.title}
+                </h3>
+
+                <p class="text-xs text-secondaryBrown leading-relaxed line-clamp-2 mb-3">
+                  ${course.summary}
+                </p>
+
+                <div class="p-2.5 rounded-xl bg-baseBg border border-secondaryBrown/10 text-[11px] text-secondaryBrownDark">
+                  <span class="font-semibold text-accentGreen block truncate">📍 ${course.partnerSpace.name}</span>
+                  <span class="text-[10px] text-secondaryBrown block truncate mt-0.5">${course.partnerSpace.highlight}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0">
+              <button onclick="openCourseModal('${course.id}')" class="w-full text-xs font-bold text-accentGreen bg-accentGreenSoft hover:bg-accentGreenSoft/80 py-2.5 rounded-xl transition flex items-center justify-center gap-1.5 cursor-pointer">
+                <span>상세 경로 및 체크포인트 →</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCourses(category) {
+      document.querySelectorAll('.course-filter-btn').forEach(btn => {
+        if (btn.dataset.category === category) {
+          btn.className = 'course-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer bg-accentGreen text-white shadow-sm';
+        } else {
+          btn.className = 'course-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer bg-white text-secondaryBrown hover:text-accentGreen border border-secondaryBrown/20';
+        }
+      });
+      renderCourses(category);
+    }
+
+    function toggleLike(id, event) {
+      event.stopPropagation();
+      if (likedCourses.includes(id)) {
+        likedCourses = likedCourses.filter(i => i !== id);
+      } else {
+        likedCourses.push(id);
+      }
+      renderCourses(document.querySelector('.course-filter-btn.bg-accentGreen').dataset.category);
+    }
+
+    // Interactive Self-Checklist
+    const checklistItems = [
+      '퇴근 후나 주말에도 스마트폰과 업무 생각에 온전히 쉬지 못한다.',
+      '혼자 조용히 걷고 싶지만, 어디가 한적하고 안전한 산책로인지 모르겠다.',
+      '카페에 가도 소음과 인파로 인해 오히려 피로감이 쌓인다.',
+      '일상의 번아웃을 달래줄 동네 쉼터와 마음 챙김 루틴이 절실하다.'
+    ];
+    let selectedChecks = [0];
+
+    function renderChecklist() {
+      const container = document.getElementById('checklistContainer');
+      container.innerHTML = checklistItems.map((item, idx) => {
+        const isChecked = selectedChecks.includes(idx);
+        return `
+          <button onclick="toggleCheck(${idx})" class="w-full text-left p-3.5 rounded-2xl border transition-all flex items-start gap-3 cursor-pointer ${
+            isChecked ? 'bg-accentGreenSoft border-accentGreen text-textColor' : 'bg-baseBg border-secondaryBrown/20 text-secondaryBrownDark hover:border-secondaryBrown/50'
+          }">
+            <div class="mt-0.5 shrink-0 text-base">
+              ${isChecked ? '🟢' : '⚪'}
+            </div>
+            <span class="text-sm font-medium leading-relaxed">${item}</span>
+          </button>
+        `;
+      }).join('');
+
+      document.getElementById('checkedCount').innerText = `${selectedChecks.length}개`;
+    }
+
+    function toggleCheck(idx) {
+      if (selectedChecks.includes(idx)) {
+        selectedChecks = selectedChecks.filter(i => i !== idx);
+      } else {
+        selectedChecks.push(idx);
+      }
+      renderChecklist();
+    }
+
+    // Modal Control Functions
+    function openApplyModal(courseTitle) {
+      if (courseTitle) {
+        document.getElementById('applyCourse').value = courseTitle;
+      }
+      document.getElementById('applyForm').classList.remove('hidden');
+      document.getElementById('ticketContainer').classList.add('hidden');
+      document.getElementById('applyModal').classList.remove('hidden');
+    }
+
+    function closeApplyModal() {
+      document.getElementById('applyModal').classList.add('hidden');
+    }
+
+    function handleApplySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('applyName').value;
+      const course = document.getElementById('applyCourse').value;
+      const slot = document.getElementById('applySlot').value;
+      const code = 'MW-' + Math.floor(1000 + Math.random() * 9000) + '-2026';
+
+      document.getElementById('ticketUserName').innerText = `${name} 님의 사색 산책 초대권`;
+      document.getElementById('ticketCourse').innerText = course;
+      document.getElementById('ticketSlot').innerText = slot;
+      document.getElementById('ticketCode').innerText = code;
+
+      document.getElementById('applyForm').classList.add('hidden');
+      document.getElementById('ticketContainer').classList.remove('hidden');
+    }
+
+    // Journal Modal Control
+    let currentJournalPage = 0;
+    function openJournalModal() {
+      setJournalPage(0);
+      document.getElementById('journalModal').classList.remove('hidden');
+    }
+    function closeJournalModal() {
+      document.getElementById('journalModal').classList.add('hidden');
+    }
+    function setJournalPage(page) {
+      if (page < 0 || page > 2) return;
+      currentJournalPage = page;
+      document.getElementById('journalPage1').classList.toggle('hidden', page !== 0);
+      document.getElementById('journalPage2').classList.toggle('hidden', page !== 1);
+      document.getElementById('journalPage3').classList.toggle('hidden', page !== 2);
+
+      document.getElementById('journalPrevBtn').disabled = (page === 0);
+      document.getElementById('journalNextBtn').disabled = (page === 2);
+
+      const dots = document.querySelectorAll('.journal-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === page) {
+          dot.className = 'journal-dot w-6 h-2.5 rounded-full bg-accentGreen transition-all';
+        } else {
+          dot.className = 'journal-dot w-2.5 h-2.5 rounded-full bg-secondaryBrown/30 transition-all';
+        }
+      });
+    }
+
+    // Course Detail Modal
+    function openCourseModal(courseId) {
+      const course = COURSES.find(c => c.id === courseId);
+      if (!course) return;
+      selectedCourseForModal = course;
+
+      document.getElementById('modalCourseImage').src = course.image;
+      document.getElementById('modalCourseKicker').innerText = course.kicker;
+      document.getElementById('modalCourseTitle').innerText = course.title;
+      document.getElementById('modalCourseMeta').innerText = `⏱️ ${course.duration} (${course.distance}) · 난이도: ${course.difficulty} · ${course.mood}`;
+      document.getElementById('modalCourseSummary').innerText = course.summary;
+      document.getElementById('modalCoursePrompt').innerText = `"${course.mindfulPrompt}"`;
+
+      document.getElementById('modalCheckpoints').innerHTML = course.checkpoints.map(cp => `
+        <div class="relative">
+          <div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-accentGreen ring-4 ring-white"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-textColor">${cp.spot}</span>
+            <span class="text-[11px] font-medium text-secondaryBrown bg-baseBg px-2 py-0.5 rounded-full">${cp.time}</span>
+          </div>
+          <p class="text-xs text-secondaryBrown mt-0.5">${cp.desc}</p>
+        </div>
+      `).join('');
+
+      document.getElementById('modalPartnerType').innerText = course.partnerSpace.type;
+      document.getElementById('modalPartnerName').innerText = course.partnerSpace.name;
+      document.getElementById('modalPartnerHighlight').innerText = course.partnerSpace.highlight;
+
+      document.getElementById('courseModal').classList.remove('hidden');
+    }
+
+    function closeCourseModal() {
+      document.getElementById('courseModal').classList.add('hidden');
+    }
+
+    function applyWithCurrentCourse() {
+      if (selectedCourseForModal) {
+        closeCourseModal();
+        openApplyModal(selectedCourseForModal.title);
+      }
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      document.getElementById('newsletterForm').classList.add('hidden');
+      document.getElementById('newsletterSuccess').classList.remove('hidden');
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCourses('all');
+      renderChecklist();
+    });
+  </script>
+</body>
+</html>
